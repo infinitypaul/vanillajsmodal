@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal</title>
+</head>
+<body>
+    <div class="cards">
+        <div class="card" data-description="InfinityPaul Is Cool">
+            <img src="https://picsum.photos/200?random=1" alt="InfinityPaul">
+            <h2>InfinityPaul</h2>
+            <button>Learn More</button>
+        </div>
+        <div class="card" data-description="Josiah Is Strong">
+            <img src="https://picsum.photos/200?random=2" alt="Josiah">
+            <h2>Josiah</h2>
+            <button>Learn More</button>
+        </div>
+        <div class="card" data-description="Toye Is Energetic">
+            <img src="https://picsum.photos/200?random=3" alt="Toye">
+            <h2>Toye</h2>
+            <button>Learn More</button>
+        </div>
+        <div class="card" data-description="Henry Is Ambitious">
+            <img src="https://picsum.photos/200?random=4" alt="Henry">
+            <h2>Henry</h2>
+            <button>Learn More</button>
+        </div>
+    </div>
+
+    <div class="modal-outer">
+        <div class="modal-inner">
+ddd
+        </div>
+    </div>
+    <script src="./modal.js"></script>
+</body>
+</html>
+
+<style>
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+        padding: 2rem;
+    }
+
+    .card {
+        background: black;
+        padding: 1rem;
+        border-radius: 2px;
+    }
+
+    .card h2 {
+        color: white;
+    }
+
+    .card button {
+        padding: 1rem;
+        background: rebeccapurple;
+        border-radius: 2px;
+        border-width: 0;
+        color: white;
+        font-size: medium;
+    }
+
+    .cards img {
+        width: 100%;
+    }
+
+    .modal-outer {
+        display: grid;
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top:0;
+        left:0;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .modal-outer.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .modal-outer img{
+        width: 100%;
+    }
+
+    .modal-inner {
+        max-width: 600px;
+        min-width: 400px;
+        min-height: 400px;
+        padding: 2rem;
+        border-radius: 5px;
+        background: white;
+        transform: translateY(-200%);
+        transition: transform 2s;
+
+    }
+
+    .modal-outer.open .modal-inner {
+        transform:  translateY(0);
+    }
+
+
+
+
+</style>
